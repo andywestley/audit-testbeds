@@ -54,10 +54,7 @@ $dom->loadXML($xml->asXML());
 
 $xmlContent = $dom->saveXML();
 
-// Save to root and public/
+// Save to root
 file_put_contents(__DIR__ . '/sitemap.xml', $xmlContent);
-if (is_dir(__DIR__ . '/public')) {
-    file_put_contents(__DIR__ . '/public/sitemap.xml', $xmlContent);
-}
 
-echo "Successfully generated sitemap.xml (Root & Public) with " . (count($tests) + 3) . " URLs!\n";
+echo "Successfully generated sitemap.xml with " . (count($tests) + 3) . " URLs!\n";
