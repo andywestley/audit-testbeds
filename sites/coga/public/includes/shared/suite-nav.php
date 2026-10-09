@@ -25,7 +25,7 @@ if (!function_exists('render_suite_switcher')) {
             ],
             'coga' => [
                 'name' => 'Cognitive (COGA)',
-                'url'  => 'https://coga-testbed.andrewwestley.co.uk/',
+                'url'  => 'https://coga.andrewwestley.co.uk/',
                 'icon' => 'bi-person-fill-check',
                 'badge' => 'Cognitive',
                 'color' => 'info'
