@@ -58,6 +58,6 @@ php scripts/generate_all_sitemaps.php
 
 ---
 
-## Migration & Deployment Guide
+## Setup & Deployment Guide
 
-For full deployment instructions, GitHub Actions secret configuration, and decommissioning old standalone repositories, see the **[SETUP_AND_MIGRATION_GUIDE.md](SETUP_AND_MIGRATION_GUIDE.md)**.
+For full local development setup, PHP built-in server commands, and GitHub Actions secret configuration for Plesk VPS deployment, see the **[SETUP_GUIDE.md](SETUP_GUIDE.md)**.
