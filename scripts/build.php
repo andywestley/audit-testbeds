@@ -21,17 +21,17 @@ echo "========================================================\n";
 $sites = [
     'accessibility' => [
         'name'            => 'Accessibility (WCAG 2.2)',
-        'assets_shared'   => $rootDir . '/sites/accessibility/assets/shared',
-        'includes_shared' => $rootDir . '/sites/accessibility/includes/shared',
-        'local_css_dirs'  => [$rootDir . '/sites/accessibility/assets/css'],
-        'local_js_dirs'   => [$rootDir . '/sites/accessibility/assets/js'],
+        'assets_shared'   => $rootDir . '/sites/accessibility/public/assets/shared',
+        'includes_shared' => $rootDir . '/sites/accessibility/public/includes/shared',
+        'local_css_dirs'  => [$rootDir . '/sites/accessibility/public/assets/css'],
+        'local_js_dirs'   => [$rootDir . '/sites/accessibility/public/assets/js'],
     ],
     'content' => [
         'name'            => 'Content Quality',
-        'assets_shared'   => $rootDir . '/sites/content/assets/shared',
-        'includes_shared' => $rootDir . '/sites/content/includes/shared',
-        'local_css_dirs'  => [$rootDir . '/sites/content/assets/css'],
-        'local_js_dirs'   => [$rootDir . '/sites/content/assets/js'],
+        'assets_shared'   => $rootDir . '/sites/content/public/assets/shared',
+        'includes_shared' => $rootDir . '/sites/content/public/includes/shared',
+        'local_css_dirs'  => [$rootDir . '/sites/content/public/assets/css'],
+        'local_js_dirs'   => [$rootDir . '/sites/content/public/assets/js'],
     ],
     'coga' => [
         'name'            => 'Cognitive (COGA)',
@@ -42,10 +42,10 @@ $sites = [
     ],
     'ux' => [
         'name'            => 'UX & Usability',
-        'assets_shared'   => $rootDir . '/sites/ux/assets/shared',
-        'includes_shared' => $rootDir . '/sites/ux/includes/shared',
-        'local_css_dirs'  => [$rootDir . '/sites/ux/assets/css'],
-        'local_js_dirs'   => [$rootDir . '/sites/ux/assets/js'],
+        'assets_shared'   => $rootDir . '/sites/ux/public/assets/shared',
+        'includes_shared' => $rootDir . '/sites/ux/public/includes/shared',
+        'local_css_dirs'  => [$rootDir . '/sites/ux/public/assets/css'],
+        'local_js_dirs'   => [$rootDir . '/sites/ux/public/assets/js'],
     ],
 ];
 

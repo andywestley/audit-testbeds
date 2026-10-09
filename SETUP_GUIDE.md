@@ -60,16 +60,16 @@ You can preview any testbed site locally using PHP's built-in web server:
 
 ```powershell
 # Accessibility Testbed
-php -S localhost:8001 -t sites/accessibility
+php -S localhost:8001 -t sites/accessibility/public
 
 # Content Testbed
-php -S localhost:8002 -t sites/content
+php -S localhost:8002 -t sites/content/public
 
 # Cognitive (COGA) Testbed
 php -S localhost:8003 -t sites/coga/public
 
 # UX & Usability Testbed
-php -S localhost:8004 -t sites/ux
+php -S localhost:8004 -t sites/ux/public
 ```
 
 ---
