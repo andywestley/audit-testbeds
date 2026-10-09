@@ -26,9 +26,8 @@ This monorepo aggregates the 4 automated benchmark testbeds into a single codeba
 
 2. Link local repo and push to GitHub:
    ```powershell
-   cd c:\Users\Andrew\Documents\github\audit-testbeds
-   git remote add origin https://github.com/andywestley/audit-testbeds.git
-   git push -u origin main
+   git clone https://github.com/andywestley/audit-testbeds.git
+   cd audit-testbeds
    ```
 
 ---
