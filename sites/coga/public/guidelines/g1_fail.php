@@ -1,0 +1,1 @@
+<?php require_once __DIR__ . '/g1.php'; ?>

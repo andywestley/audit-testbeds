@@ -1,0 +1,175 @@
+name: Deploy Audit Testbeds to Plesk VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  filter:
+    name: Detect Changed Testbeds
+    runs-on: ubuntu-latest
+    outputs:
+      shared: ${{ steps.changes.outputs.shared }}
+      a11y: ${{ steps.changes.outputs.a11y }}
+      content: ${{ steps.changes.outputs.content }}
+      coga: ${{ steps.changes.outputs.coga }}
+      ux: ${{ steps.changes.outputs.ux }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            shared:
+              - 'shared/**'
+              - '.github/workflows/deploy.yml'
+            a11y:
+              - 'sites/accessibility/**'
+            content:
+              - 'sites/content/**'
+            coga:
+              - 'sites/coga/**'
+            ux:
+              - 'sites/ux/**'
+
+  deploy-accessibility:
+    name: Deploy Accessibility Testbed
+    needs: filter
+    if: needs.filter.outputs.a11y == 'true' || needs.filter.outputs.shared == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - name: Build & Sync Shared Assets
+        run: php scripts/build.php
+      - name: Verify Deployment Secrets
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] || [ -z "${{ secrets.SSH_HOST || secrets.SERVER_HOST }}" ]; then
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "::notice title=Deployment Pending Secrets::SSH credentials not configured yet. Build verified; skipping VPS sync."
+          else
+            echo "configured=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to VPS Server via Rsync
+        if: steps.check-secrets.outputs.configured == 'true'
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvO --delete"
+          SOURCE: "sites/accessibility/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
+          TARGET: ${{ secrets.TARGET_A11Y || secrets.SSH_TARGET_DIR_A11Y || secrets.SSH_TARGET_DIR }}
+          EXCLUDE: "/.git/, /.github/, /README.md"
+
+  deploy-content:
+    name: Deploy Content Testbed
+    needs: filter
+    if: needs.filter.outputs.content == 'true' || needs.filter.outputs.shared == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - name: Build & Sync Shared Assets
+        run: php scripts/build.php
+      - name: Verify Deployment Secrets
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] || [ -z "${{ secrets.SSH_HOST || secrets.SERVER_HOST }}" ]; then
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "::notice title=Deployment Pending Secrets::SSH credentials not configured yet. Build verified; skipping VPS sync."
+          else
+            echo "configured=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to VPS Server via Rsync
+        if: steps.check-secrets.outputs.configured == 'true'
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvO --delete"
+          SOURCE: "sites/content/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
+          TARGET: ${{ secrets.TARGET_CONTENT || secrets.SSH_TARGET_DIR_CONTENT || secrets.SERVER_TARGET_DIR }}
+          EXCLUDE: "/.git/, /.github/, /README.md"
+
+  deploy-coga:
+    name: Deploy COGA Testbed
+    needs: filter
+    if: needs.filter.outputs.coga == 'true' || needs.filter.outputs.shared == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - name: Build & Sync Shared Assets
+        run: php scripts/build.php
+      - name: Verify Deployment Secrets
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] || [ -z "${{ secrets.SSH_HOST || secrets.SERVER_HOST }}" ]; then
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "::notice title=Deployment Pending Secrets::SSH credentials not configured yet. Build verified; skipping VPS sync."
+          else
+            echo "configured=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to VPS Server via Rsync
+        if: steps.check-secrets.outputs.configured == 'true'
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvO --delete"
+          SOURCE: "sites/coga/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
+          TARGET: ${{ secrets.TARGET_COGA || secrets.SSH_TARGET_DIR_COGA || secrets.SSH_TARGET_DIR }}
+          EXCLUDE: "/.git/, /.github/, /README.md"
+
+  deploy-ux:
+    name: Deploy UX Usability Testbed
+    needs: filter
+    if: needs.filter.outputs.ux == 'true' || needs.filter.outputs.shared == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - name: Build & Sync Shared Assets
+        run: php scripts/build.php
+      - name: Verify Deployment Secrets
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] || [ -z "${{ secrets.SSH_HOST || secrets.SERVER_HOST }}" ]; then
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "::notice title=Deployment Pending Secrets::SSH credentials not configured yet. Build verified; skipping VPS sync."
+          else
+            echo "configured=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to VPS Server via Rsync
+        if: steps.check-secrets.outputs.configured == 'true'
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvO --delete"
+          SOURCE: "sites/ux/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
+          TARGET: ${{ secrets.TARGET_UX || secrets.SSH_TARGET_DIR_UX || secrets.SSH_TARGET_DIR }}
+          EXCLUDE: "/.git/, /.github/, /README.md"

@@ -1,0 +1,12 @@
+/**
+ * Accessibility Testbed — Site-Specific Overrides
+ * Core tokens, diagnostics, tables, and test cards are loaded from shared/css/testbed-theme.css
+ */
+
+.test-section-card.card-aa {
+  border-top: 4px solid #f59e0b;
+}
+
+.test-section-card.card-aaa {
+  border-top: 4px solid #06b6d4;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Content Testbed",
+  "short_name": "Testbed",
+  "description": "A modular environment for testing content rules, readability heuristics, and accessibility.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

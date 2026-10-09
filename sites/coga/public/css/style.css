@@ -1,0 +1,11 @@
+/**
+ * Cognitive (COGA) Accessibility Testbed — Site-Specific Overrides
+ * Core tokens, diagnostics, comparison cards, and matrix tables are loaded from shared/css/testbed-theme.css
+ */
+
+/* COGA Specific Overrides / Intentional Cognitive Barriers */
+.coga-high-density-box {
+  line-height: 1.1;
+  font-size: 0.85rem;
+  letter-spacing: -0.03em;
+}

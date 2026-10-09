@@ -1,0 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('searchCriteria');
+  const levelFilter = document.getElementById('filterLevel');
+  const tableRows = document.querySelectorAll('#matrixTable tbody tr');
+
+  function filterTable() {
+    const query = (searchInput?.value || '').toLowerCase().trim();
+    const selectedLevel = levelFilter?.value || 'all';
+
+    tableRows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      const level = row.getAttribute('data-level') || '';
+      
+      const matchesSearch = text.includes(query);
+      const matchesLevel = selectedLevel === 'all' || level === selectedLevel;
+
+      row.style.display = (matchesSearch && matchesLevel) ? '' : 'none';
+    });
+  }
+
+  searchInput?.addEventListener('input', filterTable);
+  levelFilter?.addEventListener('change', filterTable);
+});

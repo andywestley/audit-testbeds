@@ -1,0 +1,58 @@
+/**
+ * UX & Usability Heuristics Testbed — Site-Specific Test Case Overrides
+ * Core tokens, diagnostics, cards, tables, and sandboxes are loaded from shared/css/testbed-theme.css
+ */
+
+/* Floating Back to Top Button for Scroll Escape test */
+.btn-floating-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  z-index: 1040;
+  transition: all 0.3s ease;
+}
+
+/* Confirmshaming styling helpers */
+.confirmshaming-failing-link {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-decoration: underline;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: color 0.2s;
+}
+
+.confirmshaming-failing-link:hover {
+  color: #ef4444;
+}
+
+/* False affordance dead click demo */
+.fake-button-affordance {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid #cbd5e1;
+}
+
+.fake-button-affordance:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #94a3b8;
+}
+
+/* Toast container positioning */
+.toast-container-custom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1090;
+}
