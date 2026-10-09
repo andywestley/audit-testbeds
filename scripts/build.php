@@ -42,10 +42,10 @@ $sites = [
     ],
     'ux' => [
         'name'            => 'UX & Usability',
-        'assets_shared'   => $rootDir . '/sites/ux/public/assets/shared',
-        'includes_shared' => $rootDir . '/sites/ux/public/includes/shared',
-        'local_css_dirs'  => [$rootDir . '/sites/ux/public/assets/css'],
-        'local_js_dirs'   => [$rootDir . '/sites/ux/public/assets/js'],
+        'assets_shared'   => $rootDir . '/sites/ux/assets/shared',
+        'includes_shared' => $rootDir . '/sites/ux/includes/shared',
+        'local_css_dirs'  => [$rootDir . '/sites/ux/assets/css'],
+        'local_js_dirs'   => [$rootDir . '/sites/ux/assets/js'],
     ],
 ];
 

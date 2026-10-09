@@ -1,7 +1,2 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Redirect root requests to the public directory
-    RewriteCond %{REQUEST_URI} !^/public/
-    RewriteRule ^(.*)$ public/$1 [L]
-</IfModule>
+# Set index.php as the default directory index
+DirectoryIndex index.php index.html

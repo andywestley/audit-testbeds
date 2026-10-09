@@ -1,5 +1,6 @@
 <?php
 $currentSlug = 'scroll-escape-missing';
+$disableStickyNavbar = true;
 $basePath = '../';
 
 require_once __DIR__ . '/../includes/data.php';
@@ -11,7 +12,7 @@ require_once __DIR__ . '/../includes/header.php';
 require_once __DIR__ . '/../includes/navbar.php';
 ?>
 
-<main class="py-4" id="top">
+<main class="py-4">
   <div class="container-fluid px-lg-4">
     <?php require_once __DIR__ . '/../includes/diagnostic_header.php'; ?>
 
@@ -42,7 +43,7 @@ require_once __DIR__ . '/../includes/navbar.php';
               </p>
               <a href="../long-page.php" class="btn btn-danger btn-sm" target="_blank">
                 <i class="bi bi-box-arrow-up-right me-1"></i> Open Dedicated Long Page (&gt; 3,200px)
-              </a>
+              </button>
             </div>
 
             <div class="mt-auto">
@@ -82,9 +83,9 @@ require_once __DIR__ . '/../includes/navbar.php';
               <p class="small text-muted mb-2">
                 Scroll down below to see the floating "Back to Top" button in the lower-right corner and test instant return.
               </p>
-              <a href="#bottomSection" class="btn btn-sm btn-outline-success">
+              <span class="badge bg-success-subtle text-success p-2">
                 <i class="bi bi-arrow-down me-1"></i> Scroll Down to Deep Content (3,800px)
-              </a>
+              </button>
             </div>
 
             <div class="mt-auto">
@@ -132,17 +133,17 @@ require_once __DIR__ . '/../includes/navbar.php';
       <div id="bottomSection" class="p-4 bg-light text-center rounded-3 border">
         <h5 class="fw-bold mb-2">You Have Reached the Deep End (3,800px)</h5>
         <p class="text-muted small mb-3">Notice the floating "Back to Top" button on the lower right.</p>
-        <a href="#top" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">
           <i class="bi bi-arrow-up-circle-fill me-1"></i> Jump Back to Top
-        </a>
+        </button>
       </div>
     </div>
   </div>
 </main>
 
 <!-- Floating Back to Top Escape Button -->
-<a href="#top" id="floatingTopBtn" class="btn btn-primary btn-floating-top" aria-label="Scroll back to top" title="Scroll back to top">
+<div id="floatingTopBtn" class="btn btn-primary btn-floating-top" style="pointer-events: none;">
   <i class="bi bi-arrow-up"></i>
-</a>
+</button>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
