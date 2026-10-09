@@ -1,10 +1,10 @@
 <?php
 /**
  * CLI Sitemap Generator for UX Usability Testbed
- * Automatically parses includes/data.php to generate sitemap.xml and public/sitemap.xml
+ * Automatically parses public/includes/data.php to generate public/sitemap.xml
  */
 
-require_once __DIR__ . '/includes/data.php';
+require_once __DIR__ . '/public/includes/data.php';
 
 $domain = 'https://uxusability-testbed.andrewwestley.co.uk';
 $lastmod = date('Y-m-d');
@@ -54,7 +54,7 @@ $dom->loadXML($xml->asXML());
 
 $xmlContent = $dom->saveXML();
 
-// Save to root
-file_put_contents(__DIR__ . '/sitemap.xml', $xmlContent);
+// Save to public/sitemap.xml
+file_put_contents(__DIR__ . '/public/sitemap.xml', $xmlContent);
 
 echo "Successfully generated sitemap.xml with " . (count($tests) + 3) . " URLs!\n";

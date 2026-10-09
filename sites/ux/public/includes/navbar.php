@@ -6,7 +6,7 @@ if (!isset($currentSlug)) {
     $currentSlug = '';
 }
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary-subtle sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary-subtle <?= empty($disableStickyNavbar) ? "sticky-top" : "" ?>" style="<?= !empty($disableStickyNavbar) ? "position: static !important;" : "" ?>">
   <div class="container-fluid px-lg-4">
     <a class="navbar-brand d-flex align-items-center gap-2" href="<?= $basePath ?>index.php">
       <span class="badge bg-primary px-2 py-1 fs-6"><i class="bi bi-speedometer2"></i></span>
