@@ -63,7 +63,7 @@ jobs:
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvO --delete --chmod=D755,F644"
-          SOURCE: "sites/accessibility/public/"
+          SOURCE: "sites/accessibility/"
           REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
           TARGET: ${{ secrets.TARGET_A11Y || secrets.SSH_TARGET_DIR_A11Y || secrets.SSH_TARGET_DIR }}
@@ -98,7 +98,7 @@ jobs:
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvO --delete --chmod=D755,F644"
-          SOURCE: "sites/content/public/"
+          SOURCE: "sites/content/"
           REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
           TARGET: ${{ secrets.TARGET_CONTENT || secrets.SSH_TARGET_DIR_CONTENT || secrets.SERVER_TARGET_DIR }}
@@ -133,7 +133,7 @@ jobs:
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvO --delete --chmod=D755,F644"
-          SOURCE: "sites/coga/public/"
+          SOURCE: "sites/coga/"
           REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
           TARGET: ${{ secrets.TARGET_COGA || secrets.SSH_TARGET_DIR_COGA || secrets.SSH_TARGET_DIR }}
@@ -168,7 +168,7 @@ jobs:
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvO --delete --chmod=D755,F644"
-          SOURCE: "sites/ux/public/"
+          SOURCE: "sites/ux/"
           REMOTE_HOST: ${{ secrets.SSH_HOST || secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER || secrets.SSH_USERNAME || secrets.SERVER_USERNAME }}
           TARGET: ${{ secrets.TARGET_UX || secrets.SSH_TARGET_DIR_UX || secrets.SSH_TARGET_DIR }}
