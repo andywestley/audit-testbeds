@@ -16,8 +16,8 @@ if (file_exists(__DIR__ . '/config.php')) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= htmlspecialchars($pageTitle) ?> | UxScanner Benchmark Testbed</title>
-  <meta name="description" content="Dedicated benchmark testbed application for validating the UX & Usability Heuristics Scanner rules across form usability, navigation, user freedom, and ethical design.">
+  <title><?= htmlspecialchars($pageTitle) ?> | UX &amp; Usability Anti-Patterns Suite</title>
+  <meta name="description" content="A live reference environment demonstrating real-world UX anti-patterns, deceptive design, and heuristic failures across form usability, user freedom, and navigation.">
 
   <!-- Silktide Cookie Consent Pre-Configuration -->
   <script>

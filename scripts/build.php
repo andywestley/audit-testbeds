@@ -224,6 +224,14 @@ foreach ($sites as $key => $siteConfig) {
     if (is_dir($sharedIncludesDir)) {
         copy_dir_recursive($sharedIncludesDir, $siteConfig['includes_shared']);
     }
+
+    // 5. Sync Shared Pages (e.g. Cookie & Privacy Policy)
+    $sharedCookiePolicy = $rootDir . '/shared/pages/cookie_policy.php';
+    if (file_exists($sharedCookiePolicy)) {
+        $targetCookiePolicy = $rootDir . '/sites/' . $key . '/public/cookie_policy.php';
+        copy($sharedCookiePolicy, $targetCookiePolicy);
+        echo "     ✓ Synced cookie_policy.php\n";
+    }
 }
 
 $elapsed = round((microtime(true) - $startTime) * 1000, 2);

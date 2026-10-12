@@ -9,11 +9,11 @@ if (!isset($basePath)) {
       <div class="col-md-6 text-center text-md-start">
         <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
           <span class="badge bg-primary"><i class="bi bi-speedometer2"></i></span>
-          <span class="fw-bold">UxScanner Benchmark Testbed</span>
-          <span class="text-white-50 small">| NN/g &amp; Baymard Compliance Suite</span>
+          <span class="fw-bold">UX &amp; Usability Anti-Pattern Testbed</span>
+          <span class="text-white-50 small">| NN/g &amp; Baymard Usability Suite</span>
         </div>
         <p class="small text-white-50 mb-0 mt-1">
-          Designed for automated heuristics auditing, static DOM inspection, and manual usability review.
+          A living reference demonstrating common bad practices, dark patterns, and usability friction in modern web design.
         </p>
       </div>
 

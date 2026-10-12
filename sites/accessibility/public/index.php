@@ -16,19 +16,19 @@ $totalCriteria = count($testPages);
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
           <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="badge bg-primary px-3 py-1">W3C WCAG 2.2 Suite</span>
-            <span class="badge bg-secondary">Benchmark Harness v2.0</span>
+            <span class="badge bg-primary px-3 py-1"><i class="bi bi-universal-access me-1"></i> W3C WCAG 2.2 Suite</span>
+            <span class="badge bg-danger">Inaccessible by Design</span>
           </div>
           <h1 class="display-6 fw-bold">Inaccessible Web Accessibility Testbed</h1>
           <p class="lead text-light text-opacity-75 mb-4">
-            A comprehensive reference environment engineered with intentional WCAG 2.2 violations (Level A, AA, and AAA) designed to benchmark automated accessibility scanners, browser extensions, and manual audit heuristics.
+            A comprehensive reference environment engineered with intentional WCAG 2.2 violations (Level A, AA, and AAA) to demonstrate how inaccessible coding breaks assistive technologies, excludes disabled users, and violates digital equity standards.
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a href="images.php" class="btn btn-primary btn-lg shadow-sm">
-              <i class="bi bi-play-circle-fill me-2"></i> Start WCAG Crawler Route
+              <i class="bi bi-play-circle-fill me-2"></i> Tour Inaccessible Criteria
             </a>
             <a href="#matrixTableContainer" class="btn btn-outline-light btn-lg">
-              <i class="bi bi-table me-2"></i> Jump to Criteria Matrix
+              <i class="bi bi-table me-2"></i> Browse Criteria Matrix
             </a>
           </div>
         </div>

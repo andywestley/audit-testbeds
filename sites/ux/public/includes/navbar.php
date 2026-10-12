@@ -10,8 +10,8 @@ if (!isset($currentSlug)) {
   <div class="container-fluid px-lg-4">
     <a class="navbar-brand d-flex align-items-center gap-2" href="<?= $basePath ?>index.php">
       <span class="badge bg-primary px-2 py-1 fs-6"><i class="bi bi-speedometer2"></i></span>
-      <span class="fw-bold tracking-tight">UxScanner <span class="text-primary">Testbed</span></span>
-      <span class="badge bg-secondary-subtle text-secondary navbar-brand-badge ms-1">v1.0 Heuristics</span>
+      <span class="fw-bold tracking-tight">UX &amp; Usability <span class="text-primary">Anti-Patterns</span></span>
+      <span class="badge bg-secondary-subtle text-secondary navbar-brand-badge ms-1">NN/g &amp; Heuristics</span>
     </a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@ if (!isset($currentSlug)) {
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle <?= !empty($currentSlug) ? 'active' : '' ?>" href="#" id="testsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-collection-play-fill me-1"></i> Test Suite (11 Rules)
+            <i class="bi bi-collection-play-fill me-1"></i> Anti-Patterns (11 Demonstrations)
           </a>
           <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="testsDropdown">
             <li class="dropdown-header text-uppercase text-primary small fw-bold">Pillar 1: Form Usability</li>

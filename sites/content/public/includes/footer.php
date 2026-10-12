@@ -8,7 +8,7 @@
           <span class="text-white-50 small">| Flesch-Kincaid &amp; Brand Values</span>
         </div>
         <p class="small text-white-50 mb-0 mt-1">
-          Designed for automated NLP heuristics, reading ease benchmarking, and brand lexicon auditing.
+          A living reference demonstrating common editorial bad practices, poor readability, and content anti-patterns.
         </p>
       </div>
 

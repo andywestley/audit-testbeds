@@ -16,19 +16,19 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
           <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="badge bg-warning text-dark px-3 py-1">Content Insights &amp; NLP Engine</span>
-            <span class="badge bg-secondary">Benchmark Suite v2.0</span>
+            <span class="badge bg-warning text-dark px-3 py-1"><i class="bi bi-file-earmark-x-fill me-1"></i> Editorial &amp; Readability Anti-Patterns</span>
+            <span class="badge bg-secondary">Live Demonstration Suite</span>
           </div>
-          <h1 class="display-6 fw-bold">Content Quality &amp; Readability Testbed</h1>
+          <h1 class="display-6 fw-bold">Content Quality &amp; Readability Bad Practice Testbed</h1>
           <p class="lead text-light text-opacity-75 mb-4">
-            A dedicated benchmark testbed engineered to test and validate readability heuristics, Flesch-Kincaid complexity levels, inclusive language, passive voice, sentiment tone, and brand lexicon resonance.
+            A living demonstration of poor editorial practices, excessive reading complexity, exclusionary phrasing, passive voice overload, and tone disconnects in web content. Each sample illustrates how convoluted copy creates barriers to comprehension and undermines reader trust.
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a href="blog-bad-1.php" class="btn btn-warning btn-lg shadow-sm text-dark fw-bold">
-              <i class="bi bi-play-circle-fill me-2"></i> Start Content Benchmark (Test All)
+              <i class="bi bi-play-circle-fill me-2"></i> Explore Bad Content Examples
             </a>
             <a href="#matrixTableContainer" class="btn btn-outline-light btn-lg">
-              <i class="bi bi-table me-2"></i> Jump to Matrix
+              <i class="bi bi-table me-2"></i> Browse Editorial Matrix
             </a>
           </div>
         </div>
@@ -38,25 +38,25 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
             <div class="col-6">
               <div class="p-3 bg-secondary bg-opacity-25 rounded-3 border border-secondary border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-white"><?= $totalTests ?></div>
-                <div class="text-white-50 small text-uppercase">Rules Tested</div>
+                <div class="text-white-50 small text-uppercase">Anti-Patterns</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-danger bg-opacity-25 rounded-3 border border-danger border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-danger"><?= $errorCount ?></div>
-                <div class="text-white-50 small text-uppercase">High Severity</div>
+                <div class="text-white-50 small text-uppercase">Critical Flaws</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-warning bg-opacity-25 rounded-3 border border-warning border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-warning"><?= $warningCount ?></div>
-                <div class="text-white-50 small text-uppercase">Warnings</div>
+                <div class="text-white-50 small text-uppercase">Readability Warnings</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-info bg-opacity-25 rounded-3 border border-info border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-info"><?= $infoCount ?></div>
-                <div class="text-white-50 small text-uppercase">Style &amp; Brand</div>
+                <div class="text-white-50 small text-uppercase">Tone &amp; Lexicon</div>
               </div>
             </div>
           </div>

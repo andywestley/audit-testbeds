@@ -21,19 +21,19 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
           <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="badge bg-primary px-3 py-1">UX &amp; Usability Heuristics Engine</span>
-            <span class="badge bg-secondary">Benchmark Suite v1.0</span>
+            <span class="badge bg-danger px-3 py-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> UX &amp; Usability Anti-Patterns</span>
+            <span class="badge bg-secondary">Live Demonstration Suite</span>
           </div>
-          <h1 class="display-6 fw-bold">UX Heuristics Benchmark &amp; Validation Testbed</h1>
+          <h1 class="display-6 fw-bold">UX &amp; Usability Anti-Pattern Demonstration Testbed</h1>
           <p class="lead text-light text-opacity-75 mb-4">
-            A comprehensive reference testbed engineered specifically to trigger, test, and benchmark all 11 rules of the <code>UxScanner</code> engine. Each page isolates failing DOM patterns against compliant, human-centered UX design standards.
+            A living showcase of common usability anti-patterns, deceptive dark patterns, and cognitive friction traps. Each test isolates a real-world design failure to demonstrate why it harms user experience, frustrates real people, and violates recognized Nielsen Norman Group (NN/g) usability heuristics.
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a href="tests/inputmode-missing.php" class="btn btn-primary btn-lg shadow-sm">
-              <i class="bi bi-play-circle-fill me-2"></i> Start Testbed Benchmark (Test All)
+              <i class="bi bi-play-circle-fill me-2"></i> Explore Anti-Patterns (Tour All)
             </a>
             <a href="#matrixTableContainer" class="btn btn-outline-light btn-lg">
-              <i class="bi bi-table me-2"></i> Jump to Matrix
+              <i class="bi bi-table me-2"></i> Browse Anti-Pattern Matrix
             </a>
           </div>
         </div>
@@ -43,25 +43,25 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
             <div class="col-6">
               <div class="p-3 bg-secondary bg-opacity-25 rounded-3 border border-secondary border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-white"><?= $totalTests ?></div>
-                <div class="text-white-50 small text-uppercase">Total Rules</div>
+                <div class="text-white-50 small text-uppercase">Anti-Patterns</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-danger bg-opacity-25 rounded-3 border border-danger border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-danger"><?= $errorCount ?></div>
-                <div class="text-white-50 small text-uppercase">Error Rules</div>
+                <div class="text-white-50 small text-uppercase">Severe Violations</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-warning bg-opacity-25 rounded-3 border border-warning border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-warning"><?= $warningCount ?></div>
-                <div class="text-white-50 small text-uppercase">Warnings</div>
+                <div class="text-white-50 small text-uppercase">Usability Friction</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-info bg-opacity-25 rounded-3 border border-info border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-info"><?= $infoCount ?></div>
-                <div class="text-white-50 small text-uppercase">Info Cues</div>
+                <div class="text-white-50 small text-uppercase">Experience Cues</div>
               </div>
             </div>
           </div>
@@ -96,8 +96,8 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
     <div id="matrixTableContainer" class="card border-0 shadow-sm mb-4">
       <div class="card-header bg-white py-3 border-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div>
-          <h2 class="h5 fw-bold mb-0"><i class="bi bi-grid-3x3-gap-fill text-primary me-2"></i>Heuristics Test Matrix</h2>
-          <small class="text-muted">Interactive catalog mapping each target rule to its dedicated benchmark test page.</small>
+          <h2 class="h5 fw-bold mb-0"><i class="bi bi-grid-3x3-gap-fill text-primary me-2"></i>UX Anti-Pattern Matrix</h2>
+          <small class="text-muted">Interactive catalog mapping real-world usability failures and deceptive patterns to their live test demonstrations.</small>
         </div>
 
         <div class="d-flex flex-wrap gap-2">

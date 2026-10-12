@@ -19,19 +19,19 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
           <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="badge bg-info text-dark px-3 py-1">W3C Cognitive Accessibility Taskforce</span>
-            <span class="badge bg-secondary">Benchmark Suite v2.0</span>
+            <span class="badge bg-info text-dark px-3 py-1"><i class="bi bi-brain me-1"></i> Cognitive Accessibility &amp; Neurodivergence</span>
+            <span class="badge bg-secondary">Bad Practice Demonstration</span>
           </div>
-          <h1 class="display-6 fw-bold">COGA Cognitive Accessibility Benchmark Testbed</h1>
+          <h1 class="display-6 fw-bold">Cognitive Accessibility Anti-Patterns Testbed</h1>
           <p class="lead text-light text-opacity-75 mb-4">
-            A dedicated reference testbed engineered to benchmark cognitive accessibility heuristics across all 8 W3C COGA guidelines. Demonstrates failing cognitive load triggers alongside clear, human-centered accessible patterns.
+            A live demonstration environment showcasing digital design anti-patterns that create unnecessary mental friction, disorient neurodivergent users, and fail the 8 W3C COGA guidelines. Explore how sensory clutter, memory burdens, and unpredictable layouts create real-world cognitive barriers.
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a href="guidelines/g1.php" class="btn btn-info btn-lg shadow-sm text-dark fw-bold">
-              <i class="bi bi-play-circle-fill me-2"></i> Start COGA Benchmark (Test All)
+              <i class="bi bi-play-circle-fill me-2"></i> Explore Cognitive Barriers
             </a>
             <a href="#matrixTableContainer" class="btn btn-outline-light btn-lg">
-              <i class="bi bi-table me-2"></i> Jump to Matrix
+              <i class="bi bi-table me-2"></i> Browse Guidelines Matrix
             </a>
           </div>
         </div>
@@ -41,25 +41,25 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
             <div class="col-6">
               <div class="p-3 bg-secondary bg-opacity-25 rounded-3 border border-secondary border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-white"><?= $totalTests ?></div>
-                <div class="text-white-50 small text-uppercase">Guidelines</div>
+                <div class="text-white-50 small text-uppercase">Guidelines Tested</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-danger bg-opacity-25 rounded-3 border border-danger border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-danger"><?= $errorCount ?></div>
-                <div class="text-white-50 small text-uppercase">Critical Traps</div>
+                <div class="text-white-50 small text-uppercase">Cognitive Barriers</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-warning bg-opacity-25 rounded-3 border border-warning border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-warning"><?= $warningCount ?></div>
-                <div class="text-white-50 small text-uppercase">Warnings</div>
+                <div class="text-white-50 small text-uppercase">Mental Friction</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-info bg-opacity-25 rounded-3 border border-info border-opacity-50 text-center">
                 <div class="display-6 fw-bold text-info"><?= $infoCount ?></div>
-                <div class="text-white-50 small text-uppercase">Informational</div>
+                <div class="text-white-50 small text-uppercase">Sensory Cues</div>
               </div>
             </div>
           </div>

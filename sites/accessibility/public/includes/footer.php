@@ -5,7 +5,7 @@
         <div class="container text-center">
             <div class="row align-items-center">
                 <div class="col-md-6 text-md-start mb-3 mb-md-0">
-                    <p class="mb-0 small">&copy; <?php echo date('Y'); ?> <strong>Accessibility Benchmark Testbed</strong>. Built with PHP, HTML5 &amp; Bootstrap 5.</p>
+                    <p class="mb-0 small">&copy; <?php echo date('Y'); ?> <strong>Inaccessible Web Accessibility Testbed</strong> &mdash; Demonstrating WCAG 2.2 Anti-Patterns &amp; Digital Barriers.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-inline-flex gap-3 small">

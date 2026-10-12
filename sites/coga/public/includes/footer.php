@@ -13,7 +13,7 @@ if (!isset($base_path)) {
           <span class="text-white-50 small">| W3C COGA Compliance Suite</span>
         </div>
         <p class="small text-white-50 mb-0 mt-1">
-          Designed for automated cognitive heuristics auditing, DOM inspection, and developer training.
+          A living reference demonstrating common cognitive load hurdles, memory burdens, and W3C COGA anti-patterns.
         </p>
       </div>
 
