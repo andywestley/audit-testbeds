@@ -4,14 +4,11 @@
  * 
  * Copy this file to config.php in the same directory:
  *   cp config.php.template config.php
- * and populate your Google Tag Manager container ID and GA4 Measurement ID below.
+ * and populate your Google Tag Manager container ID below.
  */
 
 // Google Tag Manager Container ID (e.g. 'GTM-NFSRSZ7C')
 $gtmId = 'GTM-XXXXXXX';
-
-// Google Analytics 4 Measurement ID (e.g. 'G-XXXXXXXXXX')
-$ga4Id = 'G-XXXXXXXXXX';
 
 // Silktide Consent Configuration / Site ID (optional)
 $silktideConsentId = '';
