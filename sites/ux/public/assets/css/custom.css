@@ -56,3 +56,41 @@
   right: 20px;
   z-index: 1090;
 }
+
+/* Sub-standard touch targets demo */
+.tiny-touch-target {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  padding: 0;
+  margin: 1px;
+  border-radius: 2px;
+  border: 1px solid #cbd5e1;
+  text-decoration: none;
+  background-color: #f8fafc;
+}
+
+.min-touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Asymmetric choices styling */
+.asymmetric-decline-link {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.asymmetric-decline-link:hover {
+  opacity: 1;
+  color: #64748b;
+}

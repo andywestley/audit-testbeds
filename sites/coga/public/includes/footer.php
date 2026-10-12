@@ -23,6 +23,10 @@ if (!isset($base_path)) {
             <i class="bi bi-grid-fill me-1"></i> Guidelines Matrix
           </a>
           <span class="text-white-50">&bull;</span>
+          <a href="<?= $base_path ?>cookie_policy.php" class="text-white-50 text-decoration-none hover-white">
+            <i class="bi bi-shield-lock me-1"></i> Cookie Policy
+          </a>
+          <span class="text-white-50">&bull;</span>
           <a href="<?= $base_path ?>guidelines/g1.php" class="text-info text-decoration-none">
             <i class="bi bi-arrow-repeat me-1"></i> Crawler Route
           </a>

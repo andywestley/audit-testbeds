@@ -416,6 +416,129 @@ $tests = [
     </button>
   </div>
 </div>'
+    ],
+
+    'paste-disabled' => [
+        'slug' => 'paste-disabled',
+        'file' => 'paste-disabled.php',
+        'rule' => 'ux-paste-disabled',
+        'name' => 'Paste Blocked on Input Fields',
+        'pillar' => 'pillar-1',
+        'severity' => 'Warning',
+        'severity_class' => 'warning',
+        'citation' => 'Baymard Institute Form Usability Standard #881 & OWASP ASVS v4.0: "Always allow pasting into password, email, and payment inputs. Disabling paste breaks password managers, increases error rates, and frustrates users."',
+        'trigger_summary' => 'Input controls utilizing <code>onpaste="return false;"</code> or event listeners that cancel paste events, blocking password managers and clipboard insertion.',
+        'failing_snippet' => '<!-- FAILING: Blocks clipboard paste via inline onpaste attribute -->
+<div class="mb-3">
+  <label for="fail_pwd" class="form-label">Create Password</label>
+  <input type="password" id="fail_pwd" name="pwd" onpaste="return false;" class="form-control" placeholder="Paste disabled">
+  <small class="text-danger">Pasting is blocked on this field</small>
+</div>
+<div class="mb-3">
+  <label for="fail_confirm_email" class="form-label">Confirm Email Address</label>
+  <input type="email" id="fail_confirm_email" name="confirm_email" onpaste="return false;" class="form-control">
+</div>',
+        'remediated_snippet' => '<!-- REMEDIATED: Unrestricted clipboard paste for password managers -->
+<div class="mb-3">
+  <label for="fixed_pwd" class="form-label">Create Password</label>
+  <input type="password" id="fixed_pwd" name="pwd" class="form-control" placeholder="Paste supported">
+  <small class="text-muted">Password managers and clipboard paste fully supported</small>
+</div>
+<div class="mb-3">
+  <label for="fixed_email" class="form-label">Email Address</label>
+  <input type="email" id="fixed_email" name="email" autocomplete="email" class="form-control">
+</div>'
+    ],
+
+    'placeholder-as-label' => [
+        'slug' => 'placeholder-as-label',
+        'file' => 'placeholder-as-label.php',
+        'rule' => 'ux-placeholder-as-label',
+        'name' => 'Placeholder Used as Sole Label',
+        'pillar' => 'pillar-1',
+        'severity' => 'Warning',
+        'severity_class' => 'warning',
+        'citation' => 'Nielsen Norman Group (NN/g): "Placeholders in Form Fields Are Harmful. Disappearing placeholder text strains short-term memory, obscures field requirements once typed, and causes high error rates."',
+        'trigger_summary' => 'Form controls that rely exclusively on the <code>placeholder</code> attribute for description, lacking an associated <code>&lt;label&gt;</code>, <code>aria-label</code>, or floating label wrapper.',
+        'failing_snippet' => '<!-- FAILING: No label element; placeholder vanishes upon user typing -->
+<form>
+  <div class="mb-3">
+    <input type="text" name="account_number" placeholder="Account Number (8 digits)" class="form-control">
+  </div>
+  <div class="mb-3">
+    <input type="text" name="sort_code" placeholder="Sort Code (XX-XX-XX)" class="form-control">
+  </div>
+</form>',
+        'remediated_snippet' => '<!-- REMEDIATED: Persistent visual label or Bootstrap floating label -->
+<form>
+  <div class="form-floating mb-3">
+    <input type="text" id="fixed_acc" name="account_number" class="form-control" placeholder="12345678">
+    <label for="fixed_acc">Account Number (8 digits)</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" id="fixed_sort" name="sort_code" class="form-control" placeholder="12-34-56">
+    <label for="fixed_sort">Sort Code (XX-XX-XX)</label>
+  </div>
+</form>'
+    ],
+
+    'target-touch-size' => [
+        'slug' => 'target-touch-size',
+        'file' => 'target-touch-size.php',
+        'rule' => 'ux-target-touch-size',
+        'name' => 'Sub-Standard Touch Target Size & Spacing',
+        'pillar' => 'pillar-2',
+        'severity' => 'Warning',
+        'severity_class' => 'warning',
+        'citation' => 'Apple Human Interface Guidelines & W3C Target Size (SC 2.5.8): "Touch controls should have an interactive target area of at least 44×44px with adequate spacing to prevent accidental activation on touch devices."',
+        'trigger_summary' => 'Touch links or buttons with bounding dimensions under 24×24px or clustered with under 8px clearance, leading to high finger mis-tap rates on mobile displays.',
+        'failing_snippet' => '<!-- FAILING: Tiny 18x18px hit zones crammed together without touch margin -->
+<div class="d-flex gap-1 align-items-center">
+  <a href="#" class="tiny-touch-target">1</a>
+  <a href="#" class="tiny-touch-target">2</a>
+  <a href="#" class="tiny-touch-target">3</a>
+  <a href="#" class="tiny-touch-target text-danger">Del</a>
+</div>',
+        'remediated_snippet' => '<!-- REMEDIATED: Minimum 44x44px target area with touch padding -->
+<nav aria-label="Pagination">
+  <ul class="pagination pagination-md mb-0">
+    <li class="page-item active"><a class="page-link min-touch-target" href="#">1</a></li>
+    <li class="page-item"><a class="page-link min-touch-target" href="#">2</a></li>
+    <li class="page-item"><a class="page-link min-touch-target" href="#">3</a></li>
+  </ul>
+</nav>'
+    ],
+
+    'deceptive-asymmetry' => [
+        'slug' => 'deceptive-asymmetry',
+        'file' => 'deceptive-asymmetry.php',
+        'rule' => 'ux-deceptive-asymmetry',
+        'name' => 'Asymmetric Choice Architecture (Visual Interference)',
+        'pillar' => 'pillar-4',
+        'severity' => 'Error',
+        'severity_class' => 'danger',
+        'citation' => 'FTC Staff Report: Bringing Dark Patterns to Light & EU Digital Services Act Article 25: "Visual interference uses asymmetric visual weight, contrasting button sizes, and hidden decline options to steer users away from neutral choices."',
+        'trigger_summary' => 'Decision prompts where operator-favored choices are prominent high-contrast buttons, while cancellation or decline options are hidden, unstyled, or rendered in muted low-contrast microcopy.',
+        'failing_snippet' => '<!-- FAILING: Extreme visual asymmetry manipulating user choice -->
+<div class="card p-4 text-center border-danger-subtle">
+  <h5>Upgrade to Premium Cloud Plan</h5>
+  <p class="text-muted small">Get unlimited backups and real-time syncing.</p>
+  <button class="btn btn-primary btn-lg w-100 py-3 mb-2 shadow">
+    Upgrade Now ($9.99/mo)
+  </button>
+  <a href="#" class="asymmetric-decline-link">
+    Maybe later, keep basic plan
+  </a>
+</div>',
+        'remediated_snippet' => '<!-- REMEDIATED: Symmetrical choice architecture with balanced visual weight -->
+<div class="card p-4 text-center border-primary shadow-sm">
+  <h5>Upgrade to Premium Cloud Plan</h5>
+  <p class="text-muted small">Choose the tier that matches your team\'s workflow.</p>
+  <div class="d-flex gap-3 justify-content-center mt-3">
+    <button class="btn btn-outline-secondary px-4 py-2">Keep Basic Plan</button>
+    <button class="btn btn-primary px-4 py-2">Upgrade Now ($9.99/mo)</button>
+  </div>
+</div>'
     ]
 ];
 

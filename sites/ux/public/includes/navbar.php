@@ -27,30 +27,34 @@ if (!isset($currentSlug)) {
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle <?= !empty($currentSlug) ? 'active' : '' ?>" href="#" id="testsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-collection-play-fill me-1"></i> Anti-Patterns (11 Demonstrations)
+            <i class="bi bi-collection-play-fill me-1"></i> Anti-Patterns (15 Demonstrations)
           </a>
           <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="testsDropdown">
-            <li class="dropdown-header text-uppercase text-primary small fw-bold">Pillar 1: Form Usability</li>
+            <li class="dropdown-header text-uppercase text-primary small fw-bold">Pillar 1: Form &amp; Input Usability</li>
             <li><a class="dropdown-item <?= $currentSlug === 'inputmode-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/inputmode-missing.php">1. Inputmode Missing</a></li>
             <li><a class="dropdown-item <?= $currentSlug === 'autocomplete-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/autocomplete-missing.php">2. Autocomplete Missing</a></li>
             <li><a class="dropdown-item <?= $currentSlug === 'password-toggle-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/password-toggle-missing.php">3. Password Toggle Missing</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'paste-disabled' ? 'active' : '' ?>" href="<?= $basePath ?>tests/paste-disabled.php">4. Paste Blocked on Inputs</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'placeholder-as-label' ? 'active' : '' ?>" href="<?= $basePath ?>tests/placeholder-as-label.php">5. Placeholder as Sole Label</a></li>
             
             <li><hr class="dropdown-divider"></li>
-            <li class="dropdown-header text-uppercase text-info small fw-bold">Pillar 2: Navigation & IA</li>
-            <li><a class="dropdown-item <?= $currentSlug === 'active-nav-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/active-nav-missing.php">4. Active Nav Missing</a></li>
-            <li><a class="dropdown-item <?= $currentSlug === 'scroll-escape-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/scroll-escape-missing.php">5. Scroll Escape Missing</a></li>
-            <li><a class="dropdown-item <?= $currentSlug === 'false-affordance' ? 'active' : '' ?>" href="<?= $basePath ?>tests/false-affordance.php">6. False Affordance</a></li>
-            <li><a class="dropdown-item <?= $currentSlug === 'external-link-cue' ? 'active' : '' ?>" href="<?= $basePath ?>tests/external-link-cue.php">7. External Link Cue</a></li>
+            <li class="dropdown-header text-uppercase text-info small fw-bold">Pillar 2: Navigation &amp; IA</li>
+            <li><a class="dropdown-item <?= $currentSlug === 'active-nav-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/active-nav-missing.php">6. Active Nav Missing</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'scroll-escape-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/scroll-escape-missing.php">7. Scroll Escape Missing</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'false-affordance' ? 'active' : '' ?>" href="<?= $basePath ?>tests/false-affordance.php">8. False Affordance</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'external-link-cue' ? 'active' : '' ?>" href="<?= $basePath ?>tests/external-link-cue.php">9. External Link Cue</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'target-touch-size' ? 'active' : '' ?>" href="<?= $basePath ?>tests/target-touch-size.php">10. Sub-Standard Touch Targets</a></li>
             
             <li><hr class="dropdown-divider"></li>
-            <li class="dropdown-header text-uppercase text-danger small fw-bold">Pillar 3: User Freedom & Safety</li>
-            <li><a class="dropdown-item <?= $currentSlug === 'modal-escape-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/modal-escape-missing.php">8. Modal Escape Missing</a></li>
-            <li><a class="dropdown-item <?= $currentSlug === 'destructive-unconfirmed' ? 'active' : '' ?>" href="<?= $basePath ?>tests/destructive-unconfirmed.php">9. Destructive Action Unconfirmed</a></li>
+            <li class="dropdown-header text-uppercase text-danger small fw-bold">Pillar 3: User Freedom &amp; Safety</li>
+            <li><a class="dropdown-item <?= $currentSlug === 'modal-escape-missing' ? 'active' : '' ?>" href="<?= $basePath ?>tests/modal-escape-missing.php">11. Modal Escape Missing</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'destructive-unconfirmed' ? 'active' : '' ?>" href="<?= $basePath ?>tests/destructive-unconfirmed.php">12. Destructive Action Unconfirmed</a></li>
             
             <li><hr class="dropdown-divider"></li>
-            <li class="dropdown-header text-uppercase text-warning small fw-bold">Pillar 4: Ethical UX</li>
-            <li><a class="dropdown-item <?= $currentSlug === 'prechecked-consent' ? 'active' : '' ?>" href="<?= $basePath ?>tests/prechecked-consent.php">10. Prechecked Consent</a></li>
-            <li><a class="dropdown-item <?= $currentSlug === 'confirmshaming' ? 'active' : '' ?>" href="<?= $basePath ?>tests/confirmshaming.php">11. Confirmshaming</a></li>
+            <li class="dropdown-header text-uppercase text-warning small fw-bold">Pillar 4: Ethical UX &amp; Deceptive Design</li>
+            <li><a class="dropdown-item <?= $currentSlug === 'prechecked-consent' ? 'active' : '' ?>" href="<?= $basePath ?>tests/prechecked-consent.php">13. Prechecked Consent</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'confirmshaming' ? 'active' : '' ?>" href="<?= $basePath ?>tests/confirmshaming.php">14. Confirmshaming Copy</a></li>
+            <li><a class="dropdown-item <?= $currentSlug === 'deceptive-asymmetry' ? 'active' : '' ?>" href="<?= $basePath ?>tests/deceptive-asymmetry.php">15. Asymmetric Choice (Visual Interference)</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
