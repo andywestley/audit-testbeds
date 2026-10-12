@@ -30,7 +30,7 @@ if (file_exists(__DIR__ . '/config.php')) {
       'ad_storage': (localStorage.getItem('stcm.consent.marketing') === 'true' || localStorage.getItem('silktideCookieChoice_marketing') === 'true') ? 'granted' : 'denied',
       'ad_user_data': (localStorage.getItem('stcm.consent.marketing') === 'true' || localStorage.getItem('silktideCookieChoice_marketing') === 'true') ? 'granted' : 'denied',
       'ad_personalization': (localStorage.getItem('stcm.consent.marketing') === 'true' || localStorage.getItem('silktideCookieChoice_marketing') === 'true') ? 'granted' : 'denied',
-      'functionality_storage': (localStorage.getItem('stcm.consent.necessary') === 'true' || localStorage.getItem('silktideCookieChoice_necessary') === 'true') ? 'granted' : 'denied',
+      'functionality_storage': (localStorage.getItem('stcm.consent.essential') === 'true' || localStorage.getItem('stcm.consent.necessary') === 'true' || localStorage.getItem('silktideCookieChoice_necessary') === 'true') ? 'granted' : 'denied',
       'security_storage': 'granted',
       'wait_for_update': 500
     });

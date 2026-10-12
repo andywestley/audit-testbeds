@@ -11,17 +11,18 @@
     }
     ?>
     
-    <?php if (!empty($gtmId)): ?>
+    <?php if (!empty($gtmId) && $gtmId !== 'GTM-XXXXXXX'): ?>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
-            analytics_storage: localStorage.getItem('silktideCookieChoice_analytics') === 'true' ? 'granted' : 'denied',
-            ad_storage: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
-            ad_user_data: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
-            ad_personalization: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
-            functionality_storage: localStorage.getItem('silktideCookieChoice_necessary') === 'true' ? 'granted' : 'denied',
-            security_storage: localStorage.getItem('silktideCookieChoice_necessary') === 'true' ? 'granted' : 'denied'
+            'analytics_storage':     (localStorage.getItem('stcm.consent.analytics') === 'true' || localStorage.getItem('silktideCookieChoice_analytics') === 'true') ? 'granted' : 'denied',
+            'ad_storage':            (localStorage.getItem('stcm.consent.marketing') === 'true' || localStorage.getItem('silktideCookieChoice_marketing') === 'true') ? 'granted' : 'denied',
+            'ad_user_data':          (localStorage.getItem('stcm.consent.marketing') === 'true' || localStorage.getItem('silktideCookieChoice_marketing') === 'true') ? 'granted' : 'denied',
+            'ad_personalization':    (localStorage.getItem('stcm.consent.marketing') === 'true' || localStorage.getItem('silktideCookieChoice_marketing') === 'true') ? 'granted' : 'denied',
+            'functionality_storage': (localStorage.getItem('stcm.consent.essential') === 'true' || localStorage.getItem('silktideCookieChoice_necessary') === 'true') ? 'granted' : 'denied',
+            'security_storage':      'granted',
+            'wait_for_update':       500
         });
     </script>
     <!-- Google Tag Manager -->
@@ -55,7 +56,7 @@
     <?php if (isset($extraStyles)) echo $extraStyles; ?>
 </head>
 <body>
-    <?php if (!empty($gtmId)): ?>
+    <?php if (!empty($gtmId) && $gtmId !== 'GTM-XXXXXXX'): ?>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtmId; ?>"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
