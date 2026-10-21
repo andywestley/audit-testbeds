@@ -100,7 +100,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                                 <li><a class="dropdown-item" href="https://inaccessible.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-universal-access text-primary me-2"></i>Accessibility Testbed (WCAG 2.2)</a></li>
                                 <li><a class="dropdown-item active" href="<?= $base_path ?>index.php"><i class="bi bi-person-fill-check text-info me-2"></i>COGA Cognitive Testbed</a></li>
                                 <li><a class="dropdown-item" href="https://content-testbed.andrewwestley.co.uk" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text-fill text-warning me-2"></i>Content &amp; Readability Testbed</a></li>
-                                <li><a class="dropdown-item" href="https://ux-testbed.andrewwestley.co.uk" target="_blank" rel="noopener"><i class="bi bi-speedometer2 text-danger me-2"></i>UX &amp; Heuristics Testbed</a></li>
+                                <li><a class="dropdown-item" href="https://uxusability-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-speedometer2 text-danger me-2"></i>UX &amp; Heuristics Testbed</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -12,7 +12,7 @@ This repository houses the 4 automated benchmark testbed applications within a s
 | :--- | :--- | :--- | :--- |
 | **Accessibility** | [`sites/accessibility/`](sites/accessibility/) | WCAG 2.2 Level A/AA/AAA, Section 508, Axe-Core | `https://inaccessible.andrewwestley.co.uk/` |
 | **Content Quality** | [`sites/content/`](sites/content/) | Plain English, Readability (Flesch), Inclusivity | `https://content-testbed.andrewwestley.co.uk/` |
-| **Cognitive (COGA)** | [`sites/coga/`](sites/coga/) | Cognitive Accessibility, Memory, Mental Load | `https://coga-testbed.andrewwestley.co.uk/` |
+| **Cognitive (COGA)** | [`sites/coga/`](sites/coga/) | Cognitive Accessibility, Memory, Mental Load | `https://coga.andrewwestley.co.uk/` |
 | **UX & Usability** | [`sites/ux/`](sites/ux/) | UX Heuristics, Form Usability, Affordances | `https://uxusability-testbed.andrewwestley.co.uk/` |
 
 ---
@@ -111,7 +111,7 @@ Navigate to **Settings $\rightarrow$ Secrets and variables $\rightarrow$ Actions
 #### Target Subdomain Document Roots on Plesk
 * **`TARGET_A11Y`**: `/var/www/vhosts/andrewwestley.co.uk/inaccessible.andrewwestley.co.uk/`
 * **`TARGET_CONTENT`**: `/var/www/vhosts/andrewwestley.co.uk/content-testbed.andrewwestley.co.uk/`
-* **`TARGET_COGA`**: `/var/www/vhosts/andrewwestley.co.uk/coga-testbed.andrewwestley.co.uk/`
+* **`TARGET_COGA`**: `/var/www/vhosts/andrewwestley.co.uk/coga.andrewwestley.co.uk/`
 * **`TARGET_UX`**: `/var/www/vhosts/andrewwestley.co.uk/uxusability-testbed.andrewwestley.co.uk/`
 
 ---

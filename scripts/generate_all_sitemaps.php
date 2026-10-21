@@ -7,7 +7,7 @@
 $sites = [
     'accessibility' => 'https://inaccessible.andrewwestley.co.uk',
     'content'       => 'https://content-testbed.andrewwestley.co.uk',
-    'coga'          => 'https://coga-testbed.andrewwestley.co.uk',
+    'coga'          => 'https://coga.andrewwestley.co.uk',
     'ux'            => 'https://uxusability-testbed.andrewwestley.co.uk'
 ];
 

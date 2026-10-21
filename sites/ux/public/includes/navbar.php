@@ -64,7 +64,7 @@ if (!isset($currentSlug)) {
           <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="suiteDropdown">
             <li class="dropdown-header text-uppercase small fw-bold text-white-50">Testbed Family Ecosystem</li>
             <li><a class="dropdown-item" href="https://inaccessible.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-universal-access text-primary me-2"></i>Accessibility Testbed (WCAG 2.2)</a></li>
-            <li><a class="dropdown-item" href="https://coga-testbed.andrewwestley.co.uk" target="_blank" rel="noopener"><i class="bi bi-person-fill-check text-info me-2"></i>COGA Cognitive Testbed</a></li>
+            <li><a class="dropdown-item" href="https://coga.andrewwestley.co.uk" target="_blank" rel="noopener"><i class="bi bi-person-fill-check text-info me-2"></i>COGA Cognitive Testbed</a></li>
             <li><a class="dropdown-item" href="https://content-testbed.andrewwestley.co.uk" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text-fill text-warning me-2"></i>Content &amp; Readability Testbed</a></li>
             <li><a class="dropdown-item active" href="<?= $basePath ?>index.php"><i class="bi bi-speedometer2 text-danger me-2"></i>UX &amp; Heuristics Testbed</a></li>
           </ul>

@@ -8,7 +8,7 @@ Unified monorepo containing the 4 automated benchmark testbeds for digital acces
 | :--- | :--- | :--- | :--- |
 | **Accessibility** | [`sites/accessibility/`](sites/accessibility/) | WCAG 2.2 Level A/AA/AAA | `https://inaccessible.andrewwestley.co.uk/` |
 | **Content Quality** | [`sites/content/`](sites/content/) | Readability, Plain English, Formatting | `https://content-testbed.andrewwestley.co.uk/` |
-| **Cognitive (COGA)** | [`sites/coga/`](sites/coga/) | Cognitive Accessibility, Memory, Attention | `https://coga-testbed.andrewwestley.co.uk/` |
+| **Cognitive (COGA)** | [`sites/coga/`](sites/coga/) | Cognitive Accessibility, Memory, Attention | `https://coga.andrewwestley.co.uk/` |
 | **UX & Usability** | [`sites/ux/`](sites/ux/) | UX Heuristics, Forms, Affordances | `https://uxusability-testbed.andrewwestley.co.uk/` |
 
 ---
