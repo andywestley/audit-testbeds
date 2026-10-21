@@ -27,6 +27,9 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
             <a href="blog-bad-1.php" class="btn btn-warning btn-lg shadow-sm text-dark fw-bold">
               <i class="bi bi-play-circle-fill me-2"></i> Explore Bad Content Examples
             </a>
+            <a href="ugc-governance.php" class="btn btn-outline-warning btn-lg shadow-sm text-white fw-bold">
+              <i class="bi bi-shield-check me-2"></i> UGC Governance Tests
+            </a>
             <a href="#matrixTableContainer" class="btn btn-outline-light btn-lg">
               <i class="bi bi-table me-2"></i> Browse Editorial Matrix
             </a>
@@ -85,6 +88,25 @@ $infoCount = count(array_filter($tests, fn($t) => strtolower($t['severity']) ===
           </div>
         </div>
       <?php endforeach; ?>
+    <!-- UGC Scope Exclusion Feature Callout -->
+    <div class="card border-0 shadow-sm mb-4 bg-dark text-white border-start border-4 border-warning">
+      <div class="card-body p-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div class="col-lg-8">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-warning text-dark"><i class="bi bi-chat-quote-fill me-1"></i> New Governance Suite</span>
+            <span class="badge bg-secondary">UGC &amp; Scope Exclusions</span>
+          </div>
+          <h3 class="h5 fw-bold mb-1">User-Generated Content (UGC) &amp; Scope Exclusion Benchmark</h3>
+          <p class="text-white-50 small mb-0">
+            Validate scanner behavior across three side-by-side scenarios: Unflagged casual comments (fails audit), Standard Flagged UGC (<code class="text-warning">data-ugc="true"</code>, <code class="text-warning">class="ugc"</code>), and Custom Selector elements (<code class="text-warning">.customer-story-card</code>).
+          </p>
+        </div>
+        <div>
+          <a href="ugc-governance.php" class="btn btn-warning text-dark fw-bold">
+            <i class="bi bi-arrow-right-circle-fill me-1"></i> Open UGC Testbed
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Matrix Table Controls -->

@@ -140,6 +140,30 @@ $tests = [
 <p>We sell products to people and try to do a decent job every day.</p>',
         'remediated_snippet' => '<!-- REMEDIATED: Aligned with core brand dictionary -->
 <p>We deliver sustainable innovation and dependable reliability across every client partnership.</p>'
+    ],
+
+    'ugc-governance' => [
+        'slug' => 'ugc-governance',
+        'file' => 'ugc-governance.php',
+        'compare_file' => 'ugc-governance.php#flagged-ugc-section',
+        'rule' => 'ugc-scope-exclusion',
+        'name' => 'User-Generated Content (UGC) & Scope Exclusion',
+        'pillar' => 'pillar-clarity',
+        'severity' => 'Info',
+        'severity_class' => 'info',
+        'citation' => 'Automated Content Scanner Heuristics: "User-authored content, reviews, and external discussions can be isolated via UGC flags or custom CSS selectors to prevent casual user phrasing from degrading audited editorial scores."',
+        'trigger_summary' => 'Side-by-side benchmark verifying scanner behavior: Unflagged UGC (fails audit), Standard Flagged UGC with data-ugc="true" (stripped when Exclude UGC setting is ON), and Custom Selectors (.customer-story-card).',
+        'failing_snippet' => '<!-- FAILING: Unflagged casual user review with passive voice, weasel words, and cliches -->
+<div class="card p-3 mb-3">
+    <div class="user-meta text-muted small mb-1">Posted by Sarah M. — 2 hours ago</div>
+    <p>I basically think this tool is actually quite great. Goes to the website on my phone to find the refund policy, but it is buried in the footer. The label was printed by my sister.</p>
+</div>',
+        'remediated_snippet' => '<!-- REMEDIATED: Flagged with standard UGC attributes and stripped by scanner -->
+<section id="flagged-ugc-section" class="ugc" data-ugc="true" data-audit-ignore="content">
+    <div class="card p-3 mb-3">
+        <p>I basically think this tool is actually quite great...</p>
+    </div>
+</section>'
     ]
 ];
 

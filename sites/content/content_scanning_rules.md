@@ -76,3 +76,17 @@ The scanner measures how well your copy aligns with specific brand values using 
 * **Technical Details:** 
   * Powered by the Unified ecosystem (`unified`, `retext-english`).
   * Utilizes a custom `retext-values` plugin built specifically for the audit engine. It parses the AST to perform direct matching of the core brand value dictionaries, and automatically builds stemmed representations (using the `stemmer` package) to match synonyms and expanded vocabulary dynamically.
+
+## 5. User-Generated Content (UGC) & Scope Exclusion
+
+Scanners evaluate all on-page text by default. User reviews, customer testimonials, and forum discussions often use informal, conversational language that can trigger false positives on editorial heuristics (`coga-passive`, `coga-intensify`, `coga-cliches`, `coga-simplify`). Automated content and accessibility audit engines provide two primary mechanisms to exclude user content from score calculations:
+
+* **Automatic UGC Pruning (`data-ugc="true"`, `class="ugc"`, `data-audit-ignore="content"`)**:
+  * **Rule:** When the *Exclude UGC* toggle is enabled in project settings, the crawler strips elements marked with `data-ugc="true"`, class `ugc`, or `data-audit-ignore="content"` prior to AST parsing.
+  * **Default Behavior (UGC Toggle OFF):** The section is parsed normally and triggers readability/style flags.
+  * **UGC Toggle ON:** The entire DOM subtree is removed from the audit pipeline without affecting page layout or visual rendering.
+
+* **Custom Content Exclusion Selectors**:
+  * **Rule:** Allows site owners to specify custom CSS selectors (e.g. `.customer-story-card`, `[data-component="reviews"]`) in project settings to prune proprietary CMS elements or third-party review widgets from the scan scope.
+  * **Demonstration Testbed:** See `ugc-governance.php` for a live side-by-side comparison of unflagged UGC (fails), standard flagged UGC (auto-stripped), and custom selector exclusions.
+

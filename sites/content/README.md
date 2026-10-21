@@ -40,6 +40,9 @@ The site is built using basic PHP to ensure it is lightweight and easy to deploy
 3. **Blog Posts (`blog-*.php`)**
    - Implements Schema.org `BlogPosting`.
    - Tests for non-inclusive language, mild profanity, language mismatch (Spanish on English page), and severe word overuse.
+4. **User-Generated Content & Governance (`ugc-governance.php`)**
+   - Demonstrates scanner scope isolation and exclusion rules.
+   - Compares unflagged user comments (fails audit), standard flagged reviews (`data-ugc="true"`, `class="ugc"`, `data-audit-ignore="content"`), and custom selector exclusions (`.customer-story-card`).
 
 ## Running Locally
 
